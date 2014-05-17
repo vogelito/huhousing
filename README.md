@@ -25,7 +25,7 @@ brew update && brew install phantomjs
 ```
 
 ### SMS Notifications
-1. Get an [Twlio](http://twilio.com) account
+1. Get an [Twilio](http://twilio.com) account
 2. Add your twilio credentials to huhousing.js
 ...Modify twilio_sid, twilio_token, and twilio_number as necessary
 

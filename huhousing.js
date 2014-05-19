@@ -44,33 +44,58 @@ var steps = [
   }, 
   function() {
     // Output content of page to stdout after form has been submitted
-    var found = page.evaluate(function() {
-      var contents = document.querySelectorAll('html')[0].outerHTML;
-      if(contents.indexOf("No Available Units Found") > 0) {
-        return true;
+    var content = page.evaluate(function() {
+      var content = document.querySelectorAll('html')[0].outerHTML;
+      if(content.indexOf("OWA") > 0) {
+        return content;
+      }
+      else if(content.indexOf("Western") > 0) {
+        return content;
+      }
+      else if(content.indexOf("western") > 0) {
+        return content;
+      }
+      else if(content.indexOf("SFP") > 0) {
+        return content;
+      }
+      else if(content.indexOf("Soldier") > 0) {
+        return content;
+      }
+      else if(content.indexOf("soldier") > 0) {
+        return content;
+      }
+      else if(content.indexOf("owa") > 0) {
+        return content;
+      }
+      else if(content.indexOf("sfp") > 0) {
+        return content;
+      }
+      else if(content.indexOf("No Available Units Found") > 0) {
+        return undefined;
       } else {
-        return true;
+        return undefined;
       }
     });
-    if(found) {
-      // Notify, do something
+    if(content) {
+      console.log(content);
+      console.log(new Date() + ": units found!");
+    } else {
+      console.log(new Date() + ": no units found");
     }
-    console.log(found);
   },
   function() {
     //Step necessary to ensure last message succeeded
   }
 ];
 
-
+console.log(new Date() + ": Starting to check");
 interval = setInterval(function() {
   if (!loadInProgress && typeof steps[testindex] == "function") {
-    console.log("step " + (testindex + 1));
     steps[testindex]();
     testindex++;
   }
   if (typeof steps[testindex] != "function") {
-    console.log("test complete!");
+    console.log(new Date() + ": Finished check");
     phantom.exit();
   }
 }, 50);

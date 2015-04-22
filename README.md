@@ -24,11 +24,6 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew update && brew install phantomjs
 ```
 
-### SMS Notifications
-1. Get an [Twilio](http://twilio.com) account
-2. Add your twilio credentials to huhousing.js
-...Modify twilio_sid, twilio_token, and twilio_number as necessary
-
 ## Running
 You can execute the script by itself, or run it as a cron job. I chose the latter
 ### Cron Job on Mac

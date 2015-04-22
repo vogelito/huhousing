@@ -12,7 +12,6 @@ Enjoy! Any patches are very very welcomed!
 ## Requirements
 1. [PhantomJS](http://phantomjs.org)
 2. Patience
-3. Twilio Account (required only for SMS notification)
 
 ### Mac Installation Instructions
 1. Install [Homebrew](http://brew.sh/)

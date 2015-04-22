@@ -25,6 +25,12 @@ brew update && brew install phantomjs
 
 ## Running
 You can execute the script by itself, or run it as a cron job. I chose the latter
+
+### Running the script by itself
+```
+phantomjs huhousing.js
+```
+
 ### Cron Job on Mac
 Access your local cron:
 ```
